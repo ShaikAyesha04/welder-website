@@ -1,0 +1,173 @@
+body {
+  background-color: #2a2a2a;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f1f1f1;
+}
+
+h2, h3 {
+  color: #ff5722; /* Industrial accent (orange/rust) */
+}
+
+.hero {
+  background-image: url('gate.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.service-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
+  background-color: #3b3b3b;
+  cursor: pointer;
+}
+
+.expertise-section {
+  background-image: url('steel-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;
+}
+
+.expertise-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.expertise-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.service-icon i {
+  color: #ff6f61;
+}
+
+.service-icon h4 {
+  margin-top: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #343a40;
+}
+
+footer p {
+  margin: 0;
+}
+
+.aboutb {
+  background-color: #2d2d2d; /* Industrial dark gray */
+  color: #f1f1f1; /* Light text for contrast */
+}
+
+.service-card img {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+h2, .card-title {
+  color: orange;
+}
+
+.portfolio-section {
+  background: linear-gradient(to bottom right, #2f2f2f, #1f1f1f);
+  color: #fff;
+}
+
+.portfolio-card {
+  background-color: #333;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
+}
+
+.project-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.portfolio-card {
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+.card-text{
+color:white;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Specific styles for the login page */
+body.login-page {
+  background: #2e2e2e; /* fallback dark background */
+  background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* gradient */
+}
+
+/
