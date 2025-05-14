@@ -1,0 +1,85 @@
+/* Nav Item Styling */
+.nav-item {
+  font-size: 2rem !important;
+  color: #ffffff !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+/* Nav Item Hover Effect */
+.nav-item:hover {
+  transform: scale(1.3) !important;
+  color: yellow !important;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px #ffc107; /* Glow effect */
+}
+
+/* Nav Item Clicked Effect */
+.nav-link.clicked {
+  color: #ffc107 !important;
+  transform: scale(1.2) !important; /* Slightly bigger on click */
+  text-shadow: 0 0 12px #ffc107, 0 0 8px #ff9800; /* Glow effect */
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.5); /* Box shadow on click */
+  transition: all 0.3s ease;
+}
+
+/* Active Nav Link */
+.nav-link.active {
+  color: #ffc107 !important;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffc107; /* Optional: Active glow effect */
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.5); /* Box shadow when active */
+}
+/* Navbar Brand Styling */
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+  text-shadow: 0 0 6px rgba(255, 165, 0, 0.7); /* Initial subtle glow */
+}
+
+/* Navbar Brand Hover Effect */
+.navbar-brand:hover {
+ 
+  transform: scale(1.2); /* Slightly grow the text */
+  color: #ffc107; /* Change text color to yellow */
+  text-shadow: 0 0 12px #ffc107, 0 0 6px #ff9800; /* Stronger yellowish glow effect */
+}
+
+/* Icon Hover Effect */
+.navbar-brand i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* Navbar Styling */
+/* Navbar Styling */
+.navbar {
+  position: relative;
+  border-radius: 15px; /* Rounded corners for the navbar */
+  overflow: hidden; /* To hide any content overflowing the rounded corners */
+  transition: all 0.5s ease; /* Smooth transition for the sliding effect */
+  border: 2px solid transparent; /* Transparent border initially */
+  margin-top: 5px; /* Keeps the margin of at least 3px from the top */
+  background-color: black;
+ 
+  margin-bottom: 1px;
+
+ /* Set the background color to white */
+}
+
+
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc107; /* Yellow border color */
+  transition: left 0.5s ease; /* Sliding effect */
+}
+
+
+
+

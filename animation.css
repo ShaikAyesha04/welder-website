@@ -1,0 +1,61 @@
+@keyframes slideInNav {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideInNav 0.8s ease-out;
+}
+
+/* Dance animation (simple shake) */
+@keyframes dance {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.nav-link {
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  color: #fff !important;
+}
+
+/* On click effect: background + text color change */
+.nav-link.clicked {
+  background-color: #ffc107;
+  color: #000 !important;
+  animation: dance 0.4s ease;
+  border-radius: 8px;
+}
+
+/* Slide-in on load */
+@keyframes slideInNav {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.navbar {
+  animation: slideInNav 0.8s ease-out;
+}
+
+/* Slide-out animation on click */
+@keyframes slideOut {
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}

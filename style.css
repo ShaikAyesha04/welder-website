@@ -1,61 +1,71 @@
-body {
-  background-color: #2a2a2a;
-  font-family: 'Segoe UI', sans-serif;
-  color: #f1f1f1;
-}
-
-h2, h3 {
-  color: #ff5722; /* Industrial accent (orange/rust) */
-}
-
+/* Hero Section */
 .hero {
-  background-image: url('gate.jpg');
+  background-image: url('home.webp');
+  background-color: #2c2f36;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
-  padding: 0 20px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 0 20px 20px 200px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  animation: heroSlide 1.2s ease-out;
+  margin-top: 1px;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #2f2f2f;
-  color: #ffffff;
+/* Slide In Animation */
+@keyframes heroSlide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
-  background-color: #3b3b3b;
-  cursor: pointer;
+/* Icon Dance Animation */
+@keyframes iconDance {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  50% { transform: rotate(10deg) scale(1.2); }
+  75% { transform: rotate(-5deg) scale(1.1); }
 }
+
+.hero .btn i.clicked {
+  animation: iconDance 0.6s ease;
+}
+
+/* Optional: Smooth button scale on hover */
+.hero .btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 
 .expertise-section {
-  background-image: url('steel-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #2c2f36; /* Industrial steel gray */
   position: relative;
+  padding: 80px 0;
+  border-radius: 20px;
+  overflow: hidden;
   color: #fff;
 }
 
 .expertise-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
   z-index: 1;
 }
 
@@ -64,110 +74,313 @@ h2, h3 {
   z-index: 2;
 }
 
-.service-icon i {
-  color: #ff6f61;
+.card.service-card {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s ease forwards;
 }
 
-.service-icon h4 {
+.card.service-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.card.service-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.card.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 193, 7, 0.6);
+  cursor: pointer;
+}
+
+.card.service-card i {
+  color: #ffc107;
+  transition: transform 0.3s ease;
+}
+
+.card.service-card:hover i {
+  transform: scale(1.2);
+  color: #ffeb3b;
+}
+
+.card.service-card h4 {
+  color: #ffc107;
+  font-weight: bold;
   margin-top: 10px;
 }
 
-.card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+.card.service-card p {
+  color: #ddd;
+  font-size: 0.95rem;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Fade Up Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.about-section {
+  background-image: url('industry.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;/* Light gray background */
+  color: #212529; /* Bootstrap's text-dark */
+  padding: 80px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  border-radius: 20px;
+  margin-top: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: heroSlide 1.2s ease-out;
+  
+ 
 }
 
-footer {
-  background-color: #343a40;
+.about-section .container {
+  background-color:#2c2f36; /* White background inside the container */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-footer p {
-  margin: 0;
+
+.about-section h2 {
+	
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color:#ffc107;; /* Slightly darker heading */
+  text-align: center;
 }
 
-.aboutb {
-  background-color: #2d2d2d; /* Industrial dark gray */
-  color: #f1f1f1; /* Light text for contrast */
+.about-section h3 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color:#ffc107;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffc107;
+}
+
+.about-section strong {
+  color: #007bff; /* Bootstrap primary blue */
+}
+.service.py-5{
+  background-image: url('service.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;/* Light gray background */
+  color: #212529; /* Bootstrap's text-dark */
+  padding: 80px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  border-radius: 20px;
+  margin-top: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: heroSlide 1.2s ease-out;
+  }
+.py-5 h2{
+	
+  color: #ffc107; 
+  text-shadow: 0 0 12px #ffc107, 0 0 6px #ff9800;
+  }
+  .py-5 h2:hover{
+   transform: scale(1.3) !important;
+   transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px #ffc107; /* Glow effect */
+  }
+.service-card {
+ 
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.service-card:hover {
+   transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .service-card img {
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  width: 100%;
 }
 
-.card-body {
-  padding: 1.25rem;
+.service-card .card-body {
+  padding: 20px;
+  text-align: center;
 }
 
-h2, .card-title {
+.service-card .card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
   color: orange;
 }
 
-.portfolio-section {
-  background: linear-gradient(to bottom right, #2f2f2f, #1f1f1f);
+.service-card .card-text {
+  color: #555;
+  font-size: 1rem;
+}
+body.test{
+ background-image: url('test.jpg');
+  background-color: #2c2f36;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  }
+
+/* Portfolio Card Styling (like Services) */
+.portfolio-card {
+  border: 5px;
+  border-radius: 1500px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: heroSlide 1.2s ease-out;
+  
+}
+
+.portfolio-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 200px black;
+  z-index: 2;
+}
+
+/* Uniform image size and fit */
+.project-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+/* Card Title & Text */
+.portfolio-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.portfolio-card .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.portfolio-card strong {
+  color: #007bff;
+}
+.small{
+color:black;
+}
+.heading{
+	color: dark; 
+  text-shadow: 0 0 12px #ffc107, 0 0 6px #ff9800;
+  }
+.heading:hover{
+	transform: scale(1.3) !important;
+   transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px #ffc107; /* Glow effect */
+  }
+/* Contact Form Container */
+.contact-container {
+  max-width: 500px;
+  margin: auto;
+  background-color: #2c2c2c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
-.portfolio-card {
+/* Contact Form Heading */
+.contact-container h2 {
+  color: #ffc107;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Contact Form Labels */
+.contact-container .form-label {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Contact Form Inputs and Textarea */
+.contact-container .form-control {
   background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.contact-container .form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 5px #ffc107;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Submit Button */
+.contact-container .btn-primary {
+  background-color: #ffc107;
   border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
-  transition: transform 0.3s ease;
+  font-weight: bold;
+  color: #000;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
+.contact-container .btn-primary:hover {
+  background-color: #e0a800;
+  color: #000;
 }
-
-.project-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  min-height: 250px;
-  max-height: 250px;
-}
-
-.portfolio-card {
-  background-color: #2c2c2c;
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(255, 165, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+body.contact{
+  background-image: url('contact.jpg');
+  background-color: #2c2f36;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-.card-text{
-color:white;
-}
-html {
-  scroll-behavior: smooth;
-}
-/* Specific styles for the login page */
-body.login-page {
-  background: #2e2e2e; /* fallback dark background */
-  background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* gradient */
+  /* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
 
-/
+body.dark-mode .navbar,
+body.dark-mode .footer {
+  background-color: #333333;
+}
+
+body.dark-mode .btn-custom {
+  background-color: #555555;
+}
+
+body.dark-mode .form-control {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+/* Add more styles as needed to customize other elements in dark mode */
+
+
+
